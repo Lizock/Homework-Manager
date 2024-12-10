@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="/scripts/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Adding Homework</title>
+</head>
+<body>
+    <h1>Homework Details</h1>
+    <form action="/homeworkList" method="POST" class="form-container">
+        <label for ="class_pick">Class:</label>
+        <select name="class_pick" id="class_pick" required>
+            <option value="">Select a class</option>
+            <% classData.forEach(className => { %>
+                <option value="<%= className %>"><%= className %></option>
+            <% }) %>;
+        </select>
+         
+        <label>
+            Name of the homework:
+            <input type="text" id="homework" name="homework" required>
+        </label>
+        <label>
+            Homework link:
+            <input type="text" id="link" name="link">
+        </label>
+        <label>
+            Homework due date:
+            <input type="datetime-local" id="dueDate" name="dueDate" required>
+        </label>
+        <label>
+            It's prioritized
+            <input type="checkbox" id="priority" name="priority" value= '1'>
+        </label>
+
+        <div class="button-container">
+            <button type="submit">Add Homework</button>
+            <button type="button" onclick="window.location.href='/'">Cancel</button>
+        </div>
+    </form>
+
+
+</body>
+</html>

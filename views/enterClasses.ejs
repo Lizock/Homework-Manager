@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="/scripts/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Enter Classes</title>
+</head>
+<body>
+    <h1>Enter Your Classes</h1>
+    <form method ="POST" action="/enterClasses" class="form-container">
+        <p>Class Names:</p>
+        <label>#1
+            <input type="text" id="classOne" name="classOne" required>
+        </label>
+        <label>#2
+            <input type="text" id="classTwo" name="classTwo">
+        </label>
+        <label>#3
+            <input type="text" id="classThree" name="classThree">
+        </label>
+        
+        <div class="button-container">
+            <button type="submit">Enter</button>
+            <button type="button" id="home" onclick="window.location.href='/'">Cancel</button>
+        </div>
+    </form>
+</body>
+</html>

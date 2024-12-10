@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="/scripts/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Homework</title>
+</head>
+<body>
+    <h1>Homework</h1>
+    <h5>A star (⭐) indicates that the homework is important and that it takes a while to complete</h5>
+    <form action="/deleteHomework" method="POST" class="homework-list-container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Homework</th>
+                    <th>Due Date</th>
+                    <th>Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% homeworkData.forEach(hw => { %>
+                    <tr>
+                        <td><%= hw.class %> </td>
+                        <td class="priority-cell"><%= hw.priority === 1 ? '⭐' : '' %><a href="<%= hw.link %>"><%= hw.homework %></a></td>
+                        <td><%= new Date(hw.dueDate).toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }) %>
+                        <td><input type="checkbox" name="doneHomeworkIds" value="<%= hw.id %>"></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button type="submit">Remove Checked Homework</button>
+            <button type="button" onclick="window.location.href='/'">Main</button>
+        </div>
+    </form>
+</body>
+</html>
