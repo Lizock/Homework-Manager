@@ -68,7 +68,7 @@ This allows user to:
     npx nodemon
 ```
 
-5. Click the link `http://localhose:3000` on your terminal.
+5. Click the link `http://localhost:3000` on your terminal.
 
 ---
 
